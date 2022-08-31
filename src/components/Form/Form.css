@@ -1,0 +1,276 @@
+:root {
+    ---success-color: #2ecc71;
+    ---error-color: #e74c3c;
+}
+
+input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+input[type=submit] {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+.radio_item {
+    display: none !important;
+    cursor: hand;
+}
+
+.label_item {
+    opacity: 0.8;
+    cursor: hand;
+}
+
+.radio_item:checked + label {
+    opacity: 10;
+}
+
+[type=radio]:checked + label img {
+    border: 3px solid #2eb4e5;
+}
+
+.label_item img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 18px;
+}
+.label_item img:hover {
+    border: 3px solid #2eb4e5;
+}
+
+.avatar-container {
+    display: flex;
+    justify-content: center;
+}
+
+.social-networks {
+    display: flex;
+    justify-content: center;
+}
+.social-networks > span {
+    margin-right: 20px;
+    margin-left: 5px;
+}
+
+input[type=text].social {
+    width: 120px;
+    margin-right: 10px;
+    margin-left: 3px;
+}
+
+.input-icon{
+    position: absolute;
+    left: 3px;
+    top: calc(50% - 0.5em); /* Keep icon in center of input, regardless of the input height */
+}
+input[type=text], input[type=submit], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 4px 0 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+.input-wrapper{
+    position: relative;
+}
+
+.inline{
+    max-width:400px;
+    margin:auto;
+}
+.input-icons i {
+    position: absolute;
+}
+
+.input-icons {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.icon {
+    padding: 10px;
+    min-width: 40px;
+}
+
+.input-field {
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    margin-bottom: 3px;
+}
+
+.form-control {
+    margin-bottom: 3px;
+    padding-bottom: 8px;
+    position: relative;
+}
+
+.form-control label {
+    color: #000;
+    display: block;
+    margin-bottom: 0;
+}
+
+.form-control label.checkbox {
+    display: inline;
+    margin-right: 10px;
+}
+
+.form-control input:focus {
+    outline: 0;
+    border-color: #777;
+}
+
+.form-control.success input, .form-control.success select {
+    border-color: var(---success-color);
+}
+
+.form-control.error input, .form-control.error select {
+    border-color: var(---error-color);
+}
+
+.form-control small {
+    border-color: var(---error-color);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    visibility: hidden;
+    color: #dc3545;
+}
+
+.form-control.error small {
+    visibility: visible;
+}
+
+::-webkit-input-placeholder {
+    text-transform: capitalize;
+}
+
+:-moz-placeholder {
+    text-transform: capitalize;
+}
+
+::-moz-placeholder {
+    text-transform: capitalize;
+}
+
+:-ms-input-placeholder {
+    text-transform: capitalize;
+}
+
+.profile {
+    display: block;
+    margin-bottom: 10px !important;
+}
+
+.list-card .modal-button {
+    border: none;
+    margin-left: 20px;
+}
+
+.card .modal-button {
+    border: none;
+}
+
+
+input[type=radio].with-font,
+input[type=checkbox].with-font {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+input[type=radio].with-font ~ label:before,
+input[type=checkbox].with-font ~ label:before {
+    display: inline-block;
+    content: "\f1db";
+    letter-spacing: 10px;
+    font-size: 1.2em;
+    color: #535353;
+    width: 1.4em;
+}
+
+input[type=radio].with-font:checked ~ label:before,
+input[type=checkbox].with-font:checked ~ label:before  {
+    content: "\f00c";
+    font-size: 1.2em;
+    color: darkgreen;
+    letter-spacing: 5px;
+}
+input[type=checkbox].with-font ~ label:before {
+    content: "\f096";
+}
+input[type=checkbox].with-font:checked ~ label:before {
+    content: "\f046";
+    color: darkgreen;
+}
+input[type=radio].with-font:focus ~ label:before,
+input[type=checkbox].with-font:focus ~ label:before,
+input[type=radio].with-font:focus ~ label,
+input[type=checkbox].with-font:focus ~ label
+{
+    color: green;
+}
+
+.addTo {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.addTo > div {
+    margin-right: 20px;
+}
+
+.addTo > span {
+    margin-right: 10px;
+}
+
+.addTo > label {
+    margin-right: 10px;
+}
+
+.avatar-container span {
+    margin-bottom: 20px;
+}
+
+.action-button {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    flex: 1;
+    margin-top: 15px;
+}
+
+.action-button .btn {
+    text-transform: capitalize;
+}

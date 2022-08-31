@@ -1,0 +1,81 @@
+input#search {
+    border-radius: 26px;
+    border: 1px solid #2eb4e5;
+    padding: 4% 20%;
+    margin: 5% 1%;
+    background-image: url('../../public/img/searchicon.png');
+    background-repeat: no-repeat;
+    outline: 0;
+    background-position: 12px;
+    background-size: 16px;
+    color: #2eb4e5
+}
+
+input#search::placeholder {
+    color: #2eb4e5;
+}
+
+.location {
+    margin-top: 20px;
+}
+
+select#location{
+    width: 148px;
+    padding: 5px;
+    font-size: 16px;
+    line-height: 1;
+    border: 0;
+    border-radius: 5px;
+    height: 34px;
+    background: url('../../public/img/arrow-down.png') no-repeat right #fff;
+    -webkit-appearance: none;
+    background-position-x: 130px;
+    outline: none;
+    color: #787878;
+}
+
+.filter-option > ul {
+    display: flex;
+    align-items: center;
+
+}
+
+.filter-option > ul > li {
+    list-style-type: none;
+    margin-left: 20px;
+}
+
+.filter-option > ul > li > i {
+    font-size: 30px;
+    color: #808080;
+}
+
+.filter-option > ul > li > i.active {
+    color: #2eb4e5;
+}
+
+.filter-option > ul > li:nth-child(1) {
+    margin-left: 0;
+}
+
+.filter-option > ul > li:nth-child(3), .filter-option > ul > li:nth-child(2) {
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+.filter-option > ul > li.display-block {
+    display: block;
+}
+
+.filter-option > ul > li > a > img {
+    padding-top: 15px;
+}
+
+.add-people {
+    color: #2eb4e5;
+}
+
+.add-people i {
+    font-size: 30px;
+    color: #2eb4e5;
+}

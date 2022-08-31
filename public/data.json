@@ -1,0 +1,143 @@
+{
+  "people": [
+    {
+      "avatar": "img/img1.jpg",
+      "city": "Ukraine, Kyiv",
+      "company": "Logical",
+      "createdDate": 1661312418872,
+      "id": 1,
+      "index": "0",
+      "isContact": false,
+      "isFavorite": false,
+      "name": "Valentina Delaney",
+      "position": "Web Designer",
+      "social_networks": {
+        "facebook": "https://www.facebook.com/",
+        "instagram": "https://www.instagram.com/",
+        "twitter": "https://twitter.com/",
+        "youtube": "https://www.youtube.com/"
+      }
+    },
+    {
+      "avatar": "img/img2.jpg",
+      "city": "Ukraine, Kharkiv",
+      "company": "Logical",
+      "createdDate": 1661226018873,
+      "id": 2,
+      "isContact": false,
+      "isFavorite": false,
+      "name": "Elizabeth Marks",
+      "position": "UI Designer",
+      "social_networks": {
+        "facebook": "https://www.facebook.com/",
+        "instagram": "https://www.instagram.com/",
+        "twitter": "https://twitter.com/",
+        "youtube": "https://www.youtube.com/"
+      }
+    },
+    {
+      "avatar": "img/img3.jpg",
+      "city": "Ukraine, Odessa",
+      "company": "HandyCode",
+      "createdDate": 1661226018873,
+      "id": 3,
+      "isContact": false,
+      "isFavorite": false,
+      "name": "Carlos Moreno",
+      "position": "UI Designer",
+      "social_networks": {
+        "facebook": "https://www.facebook.com/",
+        "instagram": "https://www.instagram.com/",
+        "twitter": "https://twitter.com/",
+        "youtube": "https://www.youtube.com/"
+      }
+    },
+    {
+      "avatar": "img/img4.jpg",
+      "city": "Ukraine, Dnipro",
+      "company": "PerfectCode",
+      "createdDate": 1661139618874,
+      "id": 4,
+      "isContact": false,
+      "isFavorite": false,
+      "name": "Charles Tapia",
+      "position": "Web Designer",
+      "social_networks": {
+        "facebook": "https://www.facebook.com/",
+        "instagram": "https://www.instagram.com/",
+        "twitter": "https://twitter.com/",
+        "youtube": "https://www.youtube.com/"
+      }
+    },
+    {
+      "avatar": "img/img5.jpg",
+      "city": "Ukraine, Lviv",
+      "company": "PerfectCode",
+      "createdDate": 1661053218876,
+      "id": 5,
+      "index": "4",
+      "isContact": false,
+      "isFavorite": false,
+      "name": "Jennifer Warner",
+      "position": "UI Designer",
+      "social_networks": {
+        "facebook": "https://www.facebook.com/",
+        "instagram": "https://www.instagram.com/",
+        "twitter": "https://twitter.com/",
+        "youtube": "https://www.youtube.com/"
+      }
+    },
+    {
+      "avatar": "img/img6.jpg",
+      "city": "Ukraine, Lviv",
+      "company": "Logical",
+      "createdDate": 1660966818878,
+      "id": 6,
+      "isContact": false,
+      "isFavorite": false,
+      "name": "Andrew Neil",
+      "position": "Web Designer",
+      "social_networks": {
+        "facebook": "https://www.facebook.com/",
+        "instagram": "https://www.instagram.com/",
+        "twitter": "https://twitter.com/",
+        "youtube": "https://www.youtube.com/"
+      }
+    },
+    {
+      "avatar": "img/img7.jpg",
+      "city": "Ukraine, Lviv",
+      "company": "Logical",
+      "createdDate": 1660880418881,
+      "id": 7,
+      "isContact": true,
+      "isFavorite": true,
+      "name": "Amanda Jacobs",
+      "position": "UI Designer",
+      "social_networks": {
+        "facebook": "https://www.facebook.com/",
+        "instagram": "https://www.instagram.com/",
+        "twitter": "https://twitter.com/",
+        "youtube": "https://www.youtube.com/"
+      }
+    },
+    {
+      "avatar": "img/img8.jpg",
+      "city": "Ukraine, Lviv",
+      "company": "HandyCode",
+      "createdDate": 1660707618887,
+      "id": 8,
+      "index": "7",
+      "isContact": false,
+      "isFavorite": true,
+      "name": "Brenda Gonzalez",
+      "position": "UI Designer",
+      "social_networks": {
+        "facebook": "https://www.facebook.com/",
+        "instagram": "https://www.instagram.com/",
+        "twitter": "https://twitter.com/",
+        "youtube": "https://www.youtube.com/"
+      }
+    }
+  ]
+}

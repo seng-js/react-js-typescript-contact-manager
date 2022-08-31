@@ -1,0 +1,60 @@
+.list-card {
+    margin-top: 10px;
+    width: 800px;
+}
+.list-card > div {
+    display: flex;
+    align-items: center;
+    border: 1px solid #d8d8d8;
+    width: 800px;
+    height: 200px;
+}
+
+.list-card div.media-icons {
+    margin-left: -5px;
+}
+
+.list-card .content img {
+    margin-right: 30px;
+}
+
+.list-card .content > div.details {
+    width: 200px;
+}
+
+.list-card .content > div.details > div {
+    display: flex;
+    justify-content: flex-start;
+    line-height: 20px;
+}
+
+.list-card img {
+    height: 130px;
+    width: 130px;
+    border-radius: 50%;
+    padding: 3px;
+    margin-left: 20px;
+    object-fit: cover;
+}
+
+.list-card .content .list-action > button {
+    display: flex;
+}
+
+.list-card .content .name {
+    font-size: 20px;
+    color: #2eb4e5;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.list-card .content .job, .list-card .content .city {
+    font-size: 14px;
+    color: #b0afaf;
+}
+
+.list-card .content .city {
+    font-size: 14px;
+    color: #b0afaf;
+    margin-bottom: 10px;
+}

@@ -1,0 +1,56 @@
+.side-bar {
+    width: 350px;
+    background: #484747;
+    min-height: 100vh;
+    transition: 500ms width;
+}
+.side-bar ul {
+    margin-top: 20px;
+    list-style: none;
+}
+.side-bar ul li {
+    font-size: 16px;
+    transition: 500ms background;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.side-bar ul li:hover {
+    background: #127b8e;
+}
+.side-bar ul li a {
+    text-decoration: none;
+    color: #eee;
+    cursor: pointer;
+    padding: 15px 15px 0 30px;
+    display: flex;
+}
+.side-bar ul li a i {
+    display: inline-block;
+    padding-right: 10px;
+    font-size: 20px;
+    padding-bottom: 16px;
+}
+#checkbox {
+    display: none;
+}
+#checkbox:checked ~ .body .side-bar {
+    width: 60px;
+}
+#checkbox:checked ~ .body .side-bar .user-p {
+    visibility: hidden;
+}
+#checkbox:checked ~ .body .side-bar a span {
+    display: none;
+}
+
+
+.side-bar ul li.active {
+    background: #127b8e;
+}
+
+.side-bar ul li.active a i {
+    color: #2eb4e5;
+}
