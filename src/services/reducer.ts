@@ -11,28 +11,30 @@ const {
 const initialState = {
     selectedFilterByName: '',
     selectedFilterByLocation: '',
-    contacts: []
+    contacts: [],
+    tempContacts: []
 }
 
-const reducer = (state = initialState, action) => {
+const reducer = (state = initialState, action: any) => {
     let contacts = [];
-    let payload = action.payload;
     switch (action.type) {
         case REACT_APP_CONTACT_GET_INIT_DATA:
             return {
                 ...state,
-                contacts: payload,
-                tempContacts: payload
+                contacts: action.payload,
+                tempContacts: action.payload
             };
         case REACT_APP_CONTACT_CREATE:
             return {
                 ...state,
-                contacts: [...state.contacts, payload.data],
+                contacts: [...state.contacts, action.payload.data],
                 tempContacts: state.contacts
             };
         case REACT_APP_CONTACT_UPDATE:
             contacts = state.contacts.map((contact) => {
+                // @ts-ignore
                 if (contact.index === payload.index) {
+                    // @ts-ignore
                     return {...contact, ...payload.data}
                 }
 
@@ -43,25 +45,26 @@ const reducer = (state = initialState, action) => {
                 contacts: contacts
             };
         case REACT_APP_CONTACT_DELETE:
+            // @ts-ignore
             contacts = state.contacts.filter(contact => contact.index !== payload.index);
             return {
                 ...state,
                 contacts: contacts
             };
         case REACT_APP_CONTACT_GET_FILTER_DATA:
-            if (isValidInput(payload.filterByLocation) &&
-                isValidInput(payload.filterByName)) {
+            if (isValidInput(action.payload.filterByLocation) &&
+                isValidInput(action.payload.filterByName)) {
                 contacts = state.tempContacts.filter(contact => {
-                    return isFilterByName(payload.filterByName, contact) &&
-                        isFilterByLocation(payload.filterByLocation, contact);
+                    return isFilterByName(action.payload.filterByName, contact) &&
+                        isFilterByLocation(action.payload.filterByLocation, contact);
                 });
-            } else if (isValidInput(payload.filterByLocation)) {
+            } else if (isValidInput(action.payload.filterByLocation)) {
                 contacts = state.tempContacts.filter(contact => {
-                    return isFilterByLocation(payload.filterByLocation, contact);
+                    return isFilterByLocation(action.payload.filterByLocation, contact);
                 });
-            } else if (isValidInput(payload.filterByName)) {
+            } else if (isValidInput(action.payload.filterByName)) {
                 contacts = state.tempContacts.filter(contact => {
-                    return isFilterByName(payload.filterByName, contact);
+                    return isFilterByName(action.payload.filterByName, contact);
                 });
             } else {
                 contacts = state.tempContacts;
@@ -70,8 +73,8 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 contacts,
                 tempContacts: state.tempContacts,
-                selectedFilterByName: payload.filterByName,
-                selectedFilterByLocation: payload.filterByLocation
+                selectedFilterByName: action.payload.filterByName,
+                selectedFilterByLocation: action.payload.filterByLocation
             };
         default:
             return {

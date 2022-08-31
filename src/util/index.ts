@@ -4,20 +4,20 @@ const getSetting = () => {
     }
 }
 
-const getLocationsByData = (data) => {
+const getLocationsByData = (data: any[]) => {
     let locations = data.map(item => item.city);
     return Array.from(new Set(locations));
 }
 
-const isValidInput = (filterByData) => {
+const isValidInput = (filterByData: any) => {
     return filterByData !== undefined && filterByData.length > 0
 }
 
-const isFilterByLocation = (filterByLocation, contact) => {
+const isFilterByLocation = (filterByLocation: string, contact: any) => {
     return contact.city.toLowerCase() === filterByLocation.toLowerCase();
 }
 
-const isFilterByName = (filterByName, contact) => {
+const isFilterByName = (filterByName: string, contact: any) => {
     const fullSearchQuery = `${contact.name.toLowerCase()} ${contact.company.toLowerCase()} ${contact.position.toLowerCase()}`;
     return fullSearchQuery.toLowerCase().includes(filterByName.toLowerCase());
 }

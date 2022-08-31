@@ -1,8 +1,9 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import TriggerButton from "./TriggerButton";
 import Modal from "./Modal";
 
-export class ContainerModal extends Component {
+
+export class ContainerModal extends Component<any> {
     state = { isShown: false };
     showModal = () => {
         this.setState({ isShown: true }, () => {
@@ -15,36 +16,42 @@ export class ContainerModal extends Component {
         this.TriggerButton.focus();
         this.toggleScrollLock();
     };
-    onKeyDown = (event) => {
+    onKeyDown = (event: { keyCode: number; }) => {
         if (event.keyCode === 27) {
             this.closeModal();
         }
     };
-    onClickOutside = (event) => {
+    onClickOutside = (event: any) => {
         if (this.modal && this.modal.contains(event.target)) return;
         this.closeModal();
     };
 
     toggleScrollLock = () => {
+        // @ts-ignore
         document.querySelector('html').classList.toggle('scroll-lock');
     };
+
+    private closeButton: any;
+    private TriggerButton: any;
+    private modal: any;
+
     render() {
+        const {triggerText, item} = this.props;
         return (
             <React.Fragment>
                 <TriggerButton
                     showModal={this.showModal}
-                    buttonRef={(n) => (this.TriggerButton = n)}
-                    triggerText={this.props.triggerText}
+                    buttonRef={(n: any) => (this.TriggerButton = n)}
+                    triggerText={triggerText}
                 />
                 {this.state.isShown ? (
                     <Modal
-                        onSubmit={this.props.onSubmit}
-                        modalRef={(n) => (this.modal = n)}
-                        buttonRef={(n) => (this.closeButton = n)}
+                        modalRef={(n: any) => (this.modal = n)}
+                        buttonRef={(n: any) => (this.closeButton = n)}
                         closeModal={this.closeModal}
                         onKeyDown={this.onKeyDown}
                         onClickOutside={this.onClickOutside}
-                        item={this.props.item}
+                        item={item}
                     />
                 ) : null}
             </React.Fragment>

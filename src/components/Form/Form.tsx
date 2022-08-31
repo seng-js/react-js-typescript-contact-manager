@@ -5,7 +5,8 @@ import {saveContactHandler} from "../../services";
 import {useDispatch} from "react-redux";
 import {avatars, listCity, listPosition} from "../../util/constants";
 
-export const Form = (props) => {
+export const Form = (props: any) => {
+    const {index} = props.item
     const dispatch = useDispatch();
     const [actionLabel, setActionLabel] = useState('Create');
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
@@ -13,7 +14,7 @@ export const Form = (props) => {
     const closeModal = () => {
         props.closeModal();
     }
-    const saveInfo = (data) => {
+    const saveInfo = (data: object) => {
         saveContactHandler(data, dispatch);
         closeModal();
     }
@@ -54,6 +55,7 @@ export const Form = (props) => {
         reset(props.item);
     }, [props.item, reset]);
 
+
     return (
         <div className="">
             <form action="" id="form" onSubmit={handleSubmit(saveInfo)} className="form-control">
@@ -66,14 +68,12 @@ export const Form = (props) => {
                     <input type="text" id="name"
                            {...register('name', {required: {value: true, message: 'Name is required!'}}) }
                     />
-                    <small>{errors?.name && errors?.name.message}</small>
                 </div>
                 <div className={errors?.company ? "form-control error" : "form-control"}>
                     <label htmlFor="name">Company</label>
                     <input type="text" id="company"
                            {...register('company', {required: {value: true, message: 'Company is required!'}}) }
                     />
-                    <small>{errors?.company && errors?.company.message}</small>
                 </div>
                 <label htmlFor="position">Position</label>
                 <div className={errors?.position ? "form-control error" : "form-control"}>
@@ -82,7 +82,6 @@ export const Form = (props) => {
                     >
                         {renderPositions}
                     </select>
-                    <small>{errors?.position && errors?.position.message}</small>
                 </div>
                 <div className={errors?.city ? "form-control error" : "form-control"}>
                     <label htmlFor="city">City</label>
@@ -91,7 +90,6 @@ export const Form = (props) => {
                     >
                         {renderCities}
                     </select>
-                    <small>{errors?.city && errors?.city.message}</small>
                 </div>
                 <div className="form-control">
                     <label htmlFor="isContact" className="checkbox">Add to contact?</label>
@@ -116,7 +114,7 @@ export const Form = (props) => {
                     {renderSocialNetworks}
                 </div>
                 <div className="action-button">
-                    <input type="hidden" id="id" name="index" value={props.item?.index} />
+                    <input type="hidden" id="id" name="index" value={index} />
                     <input type="submit" className="btn btn-success" value={actionLabel} /><button className="btn btn-cancel" onClick={() => closeModal()}>Cancel</button>
                 </div>
             </form>

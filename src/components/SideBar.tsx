@@ -2,6 +2,7 @@ import {NavLink, useLocation} from "react-router-dom";
 import './SideBar.css';
 import {menuItems} from "../util/constants";
 import {useGetProfile} from "../hooks/useGetProfile";
+import React from "react";
 
 const SideBar = () => {
     const profile = useGetProfile();

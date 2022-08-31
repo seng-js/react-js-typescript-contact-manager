@@ -4,7 +4,16 @@ import FocusTrap from 'focus-trap-react';
 import Form from "./Form";
 import './Modal.css';
 
-export const Modal = ({
+type ModalProps = {
+    onClickOutside:any,
+    onKeyDown:any,
+    modalRef:any,
+    buttonRef:any,
+    closeModal:any,
+    item:any
+}
+
+export const Modal: React.FC<ModalProps> = ({
                           onClickOutside,
                           onKeyDown,
                           modalRef,
@@ -12,11 +21,11 @@ export const Modal = ({
                           closeModal,
                           item
                       }) => {
+
     return ReactDOM.createPortal(
         <FocusTrap>
             <aside
                 role="dialog"
-                tabIndex="-1"
                 aria-modal="true"
                 className="modal-cover"
                 onClick={onClickOutside}

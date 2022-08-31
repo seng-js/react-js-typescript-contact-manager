@@ -1,7 +1,13 @@
+import React from "react";
 import GridViewItems from "./GridViewItems";
 import ListViewItems from "./ListViewItems";
 
-const ContactItems = ({isGridView, data}) => {
+type ContactItemProps = {
+    isGridView: any,
+    data: any
+}
+
+const ContactItems: React.FC<ContactItemProps> = ({isGridView, data}) => {
     return (
         <>
             {isGridView ? (

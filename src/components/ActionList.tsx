@@ -1,10 +1,16 @@
+import React from "react";
 import {useDispatch} from "react-redux";
 import {updateContactHandler} from "../services";
 
-const ActionList = (props) => {
+type ActionListProps= {
+    index: string,
+    item: any
+}
+
+const ActionList: React.FC<ActionListProps>  = ({index, item}) => {
     const dispatch = useDispatch();
-    const {isContact, isFavorite, index} = props.item;
-    const updateData = (type, action) => {
+    const {isContact, isFavorite} = item;
+    const updateData = (type: string, action: string) => {
         updateContactHandler(type, action, index, dispatch);
     }
     return (

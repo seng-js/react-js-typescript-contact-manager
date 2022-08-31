@@ -5,35 +5,35 @@ const {
     REACT_APP_CONTACT_GET_FILTER_DATA,
     REACT_APP_CONTACT_GET_INIT_DATA
 } = process.env
-export const getInitData = (contacts) => {
+export const getInitData = (contacts:any) => {
     return {
         type: REACT_APP_CONTACT_GET_INIT_DATA,
         payload: contacts,
     };
 };
 
-export const createContact = (data) => {
+export const createContact = (data:object) => {
     return {
         type: REACT_APP_CONTACT_CREATE,
         payload: {data: data}
     };
 };
 
-export const updateContact = (index, data) => {
+export const updateContact = (index:string, data:object) => {
     return {
         type: REACT_APP_CONTACT_UPDATE,
         payload: {index: index, data: data}
     };
 };
 
-export const deleteContact = (index) => {
+export const deleteContact = (index:string) => {
     return {
         type: REACT_APP_CONTACT_DELETE,
         payload: {index: index}
     };
 };
 
-export const getFilterData = (payload) => {
+export const getFilterData = (payload:object) => {
     return {
         type: REACT_APP_CONTACT_GET_FILTER_DATA,
         payload: payload

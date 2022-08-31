@@ -1,7 +1,12 @@
+import React from "react";
 import {Link} from "react-router-dom";
 
-const SocialList = (props) => {
-    const {facebook, twitter, instagram, youtube} = props.data;
+type SocialListProps = {
+    data: any
+}
+
+const SocialList:React.FC<SocialListProps> = ({data}) => {
+    const {facebook, twitter, instagram, youtube} = data;
     return (
         <div className="media-icons">
             {facebook.length > 0 && (

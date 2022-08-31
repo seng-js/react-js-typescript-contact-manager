@@ -5,7 +5,7 @@ import Favorites from "./pages/Favorites";
 import People from "./pages/People";
 import Contacts from "./pages/Contacts";
 import Companies from "./pages/Companies";
-import {useEffect} from "react";
+import React, {useEffect} from "react";
 import {getInitDataHandler} from "./services";
 import {useDispatch} from "react-redux";
 import SideBar from "./components/SideBar";
@@ -17,7 +17,7 @@ function App() {
     useEffect(() => {
         getInitDataHandler(dispatch);
     });
-    
+
     return (
       <>
           <BrowserRouter>

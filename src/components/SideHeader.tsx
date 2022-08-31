@@ -5,12 +5,18 @@ import {useDispatch, useSelector} from "react-redux";
 import {getFilterData} from "../services/actions";
 import {ContainerModal} from "./Form/ContainerModal";
 import {useGetProfile} from "../hooks/useGetProfile";
+import React from 'react';
 
-const SideHeader = ({isGridView, switchView, title}) => {
+type SideHeaderProps = {
+    isGridView:any,
+    switchView:any,
+    title:any
+}
+const SideHeader: React.FC<SideHeaderProps> = ({isGridView, switchView, title}) => {
     const dispatch = useDispatch();
     const profile = useGetProfile();
     const {locationFilter} = getSetting();
-    const state = useSelector(state => state);
+    const state:any = useSelector(state => state);
 
     const renderLocationOptions = getLocationsByData(state?.tempContacts).map((location, key) => {
         return <option value={location.toString()} key={key}>{location}</option>
