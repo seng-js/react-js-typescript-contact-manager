@@ -26,11 +26,21 @@ const isFilterByName = (filterByName: string, contact: any) => {
     return fullSearchQuery.toLowerCase().includes(filterByName.toLowerCase());
 }
 
+const convertArrayObject = (data:any[]) => {
+    let contacts: Array<any> = [];
+    Object.entries(data).forEach(([index, value]) => {
+        contacts.push({...value, index});
+    });
+
+    return contacts;
+}
+
 export {
     isValidInput,
     isFilterByLocation,
     isFilterByName,
     isFilterDelete,
     getLocationsByData,
+    convertArrayObject,
     getSetting
 }

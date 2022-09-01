@@ -26,8 +26,8 @@ export class ContainerModal extends Component<any> {
     };
 
     toggleScrollLock = () => {
-        // @ts-ignore
-        document.querySelector('html').classList.toggle('scroll-lock');
+        const html = document.querySelector('html') as HTMLHtmlElement | null;
+        html?.classList.toggle('scroll-lock');
     };
 
     private closeButton: any;

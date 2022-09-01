@@ -11,7 +11,6 @@ type FormProps = {
 }
 
 export const Form: React.FC<FormProps> = (props) => {
-    console.log(props);
     const dispatch = useDispatch();
     const [actionLabel, setActionLabel] = useState('Create');
     const { register, handleSubmit, formState: { errors }, reset } = useForm();

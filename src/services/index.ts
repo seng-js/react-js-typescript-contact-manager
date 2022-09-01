@@ -1,6 +1,7 @@
 import {AnyAction, Dispatch} from "@reduxjs/toolkit";
 import axios from "axios";
 import {createContact, deleteContact, getInitData, updateContact} from "./actions";
+import {convertArrayObject} from "../util";
 
 const {REACT_APP_FIREBASE_URL} = process.env;
 const peopleUrl = REACT_APP_FIREBASE_URL + 'people';
@@ -8,11 +9,7 @@ const peopleUrl = REACT_APP_FIREBASE_URL + 'people';
 export const getInitDataHandler = (dispatch: Dispatch<AnyAction>) => {
     return axios.get(peopleUrl + '.json')
         .then((response) => {
-            let contacts: Array<any> = [];
-            Object.entries(response.data).forEach(([index, value]) => {
-                // @ts-ignore
-                contacts.push({...value, index});
-            });
+            let contacts = convertArrayObject(response.data);
             dispatch(getInitData(contacts))
         }).catch((error) => {
             console.log('Error: ' + error);

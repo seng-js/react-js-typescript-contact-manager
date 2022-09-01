@@ -1,5 +1,9 @@
 import reducer from './reducer';
-import {configureStore} from "@reduxjs/toolkit";
+import {configureStore} from '@reduxjs/toolkit'
 
-// @ts-ignore
-export default configureStore({ reducer: reducer });
+const store = configureStore({
+    reducer: reducer,
+})
+export type RootState = ReturnType<typeof store.getState>
+
+export default store
