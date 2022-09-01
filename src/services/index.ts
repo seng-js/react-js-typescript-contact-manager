@@ -41,20 +41,16 @@ export const updateContactHandler = (type: string, action: string, index: string
     });
 }
 
-export const saveContactHandler = (data: object, dispatch: Dispatch<AnyAction>) => {
-    // @ts-ignore
+export const saveContactHandler = (data: any, dispatch: Dispatch<AnyAction>) => {
     if (data.index === undefined) {
         axios.post(peopleUrl + '.json', data).then((response) => {
             if (response.data !== undefined) {
-                // @ts-ignore
                 data.index = response.data.name;
                 dispatch(createContact(data))
             }
         });
     } else {
-        // @ts-ignore
         axios.patch(peopleUrl + '/' + data.index + '.json', data).then(() => {
-            // @ts-ignore
             dispatch(updateContact(data.index, data))
         });
     }

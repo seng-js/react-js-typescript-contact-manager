@@ -26,9 +26,9 @@ function App() {
                   <Routes>
                       <Route path="/" element={<Home />} />
                       <Route path="/contacts" element={<Contacts />} />
-                      <Route path="/favorites" element={<Favorites  />} />
+                      <Route path="/favorites" element={<Favorites />} />
                       <Route path="/people" element={<People />} />
-                      <Route path="/companies" element={<Companies  />} />
+                      <Route path="/companies" element={<Companies />} />
                   </Routes>
               </div>
           </BrowserRouter>

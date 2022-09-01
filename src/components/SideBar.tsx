@@ -9,9 +9,11 @@ const SideBar = () => {
     const location = useLocation();
     const { pathname } = location;
 
-    const renderMenuItems= menuItems.map(({link, icon, name}, key) => <li key={key} className={pathname === link ? "active" : ""}>
-        <NavLink to={link}><i className={icon} aria-hidden="true"></i><span>{name}</span></NavLink>
-    </li>);
+    const renderMenuItems= menuItems.map(({link, icon, name}, key) => (
+        <li key={key} className={pathname === link ? "active" : ""}>
+            <NavLink to={link}><i className={icon} aria-hidden="true"></i><span>{name}</span></NavLink>
+        </li>
+    ));
 
     return (
         <>

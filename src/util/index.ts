@@ -17,6 +17,10 @@ const isFilterByLocation = (filterByLocation: string, contact: any) => {
     return contact.city.toLowerCase() === filterByLocation.toLowerCase();
 }
 
+const isFilterDelete = (contact: any, index: string) => {
+    return contact.index !== index;
+}
+
 const isFilterByName = (filterByName: string, contact: any) => {
     const fullSearchQuery = `${contact.name.toLowerCase()} ${contact.company.toLowerCase()} ${contact.position.toLowerCase()}`;
     return fullSearchQuery.toLowerCase().includes(filterByName.toLowerCase());
@@ -26,6 +30,7 @@ export {
     isValidInput,
     isFilterByLocation,
     isFilterByName,
+    isFilterDelete,
     getLocationsByData,
     getSetting
 }

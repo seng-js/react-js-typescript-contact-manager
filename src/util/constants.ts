@@ -26,7 +26,7 @@ const menuItems = [
     }
 ];
 
-const avatars =  [
+const avatars:any[] =  [
     'img/img1.jpg',
     'img/img2.jpg',
     'img/img3.jpg',
@@ -37,7 +37,7 @@ const avatars =  [
     'img/img8.jpg'
 ];
 
-const listPosition = [
+const listPosition:any[] = [
     'Select Position',
     'Web Designer',
     'UI Designer',
@@ -50,7 +50,7 @@ const listPosition = [
     'Mobile Software Engineer'
 ];
 
-const listCity = [
+const listCity:any[] = [
     'Select City',
     'Ukraine, Kyiv',
     'Ukraine, Kharkiv',
@@ -60,9 +60,28 @@ const listCity = [
     'Cambodia, Phnom Penh'
 ];
 
+const defaultContact = {
+    isContact: false,
+    isFavorite: false,
+    actionLabel: 'Create',
+    index: 0,
+    avatar: '',
+    name: '',
+    company: '',
+    position: '',
+    city: '',
+    social_networks: {
+        facebook: '',
+        instagram: '',
+        twitter: '',
+        youtube: ''
+    }
+}
+
 export {
     menuItems,
     avatars,
     listPosition,
-    listCity
+    listCity,
+    defaultContact
 }

@@ -1,4 +1,9 @@
-import {isFilterByLocation, isFilterByName, isValidInput} from "../util";
+import {
+    isFilterByLocation,
+    isFilterByName,
+    isFilterDelete,
+    isValidInput
+} from "../util";
 
 const {
     REACT_APP_CONTACT_CREATE,
@@ -15,8 +20,8 @@ const initialState = {
     tempContacts: []
 }
 
-const reducer = (state = initialState, action: any) => {
-    let contacts = [];
+const reducer = (state: any = initialState, action: any) => {
+    let contacts: Array<any> = [];
     switch (action.type) {
         case REACT_APP_CONTACT_GET_INIT_DATA:
             return {
@@ -31,39 +36,38 @@ const reducer = (state = initialState, action: any) => {
                 tempContacts: state.contacts
             };
         case REACT_APP_CONTACT_UPDATE:
-            contacts = state.contacts.map((contact) => {
-                // @ts-ignore
-                if (contact.index === payload.index) {
-                    // @ts-ignore
-                    return {...contact, ...payload.data}
+            contacts = state.contacts.map((contact: any) => {
+                if (contact.index === action.payload.index) {
+                    return {...contact, ...action.payload.data}
                 }
 
                 return contact;
             });
             return {
                 ...state,
-                contacts: contacts
+                contacts
             };
         case REACT_APP_CONTACT_DELETE:
-            // @ts-ignore
-            contacts = state.contacts.filter(contact => contact.index !== payload.index);
+            contacts = state.contacts.filter((contact: any) => {
+                return isFilterDelete(contact, action.payload.index);
+            });
             return {
                 ...state,
-                contacts: contacts
+                contacts
             };
         case REACT_APP_CONTACT_GET_FILTER_DATA:
             if (isValidInput(action.payload.filterByLocation) &&
                 isValidInput(action.payload.filterByName)) {
-                contacts = state.tempContacts.filter(contact => {
+                contacts = state.tempContacts.filter((contact: any) => {
                     return isFilterByName(action.payload.filterByName, contact) &&
                         isFilterByLocation(action.payload.filterByLocation, contact);
                 });
             } else if (isValidInput(action.payload.filterByLocation)) {
-                contacts = state.tempContacts.filter(contact => {
+                contacts = state.tempContacts.filter((contact: any) => {
                     return isFilterByLocation(action.payload.filterByLocation, contact);
                 });
             } else if (isValidInput(action.payload.filterByName)) {
-                contacts = state.tempContacts.filter(contact => {
+                contacts = state.tempContacts.filter((contact: any) => {
                     return isFilterByName(action.payload.filterByName, contact);
                 });
             } else {

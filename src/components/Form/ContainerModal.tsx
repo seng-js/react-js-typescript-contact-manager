@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import TriggerButton from "./TriggerButton";
 import Modal from "./Modal";
 
-
 export class ContainerModal extends Component<any> {
     state = { isShown: false };
     showModal = () => {

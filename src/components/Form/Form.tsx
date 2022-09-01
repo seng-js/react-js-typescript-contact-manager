@@ -5,8 +5,13 @@ import {saveContactHandler} from "../../services";
 import {useDispatch} from "react-redux";
 import {avatars, listCity, listPosition} from "../../util/constants";
 
-export const Form = (props: any) => {
-    const {index} = props.item
+type FormProps = {
+    item:any,
+    closeModal(): void;
+}
+
+export const Form: React.FC<FormProps> = (props) => {
+    console.log(props);
     const dispatch = useDispatch();
     const [actionLabel, setActionLabel] = useState('Create');
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
@@ -49,7 +54,7 @@ export const Form = (props: any) => {
     });
 
     useEffect(() => {
-        if (props.item !== undefined) {
+        if (props.item.id !== undefined) {
             setActionLabel('Update');
         }
         reset(props.item);
@@ -59,7 +64,7 @@ export const Form = (props: any) => {
     return (
         <div className="">
             <form action="" id="form" onSubmit={handleSubmit(saveInfo)} className="form-control">
-                <label className="profile" htmlFor="socialNetworks">Select Avata</label>
+                <label className="profile" htmlFor="socialNetworks">Select Avatar</label>
                <div className="avatar-container">
                    {renderAvatars}
                </div>
@@ -114,8 +119,9 @@ export const Form = (props: any) => {
                     {renderSocialNetworks}
                 </div>
                 <div className="action-button">
-                    <input type="hidden" id="id" name="index" value={index} />
-                    <input type="submit" className="btn btn-success" value={actionLabel} /><button className="btn btn-cancel" onClick={() => closeModal()}>Cancel</button>
+                    <input type="hidden" id="index" name="index" value={props.item.index} />
+                    <input type="submit" className="btn btn-success" value={actionLabel} />
+                    <button className="btn btn-cancel" onClick={() => closeModal()}>Cancel</button>
                 </div>
             </form>
         </div>

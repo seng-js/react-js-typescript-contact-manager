@@ -6,6 +6,7 @@ import {getFilterData} from "../services/actions";
 import {ContainerModal} from "./Form/ContainerModal";
 import {useGetProfile} from "../hooks/useGetProfile";
 import React from 'react';
+import {defaultContact} from "../util/constants";
 
 type SideHeaderProps = {
     isGridView:any,
@@ -26,7 +27,10 @@ const SideHeader: React.FC<SideHeaderProps> = ({isGridView, switchView, title}) 
         <>
             <div className="row">
                 <div>
-                    <input type="search" id="search" value={state.selectedFilterByName} placeholder="Search..."
+                    <input type="search"
+                           id="search"
+                           value={state.selectedFilterByName}
+                           placeholder="Search..."
                            onChange={(event) => dispatch(getFilterData(
                                {
                                    filterByName: event.target.value,
@@ -50,7 +54,7 @@ const SideHeader: React.FC<SideHeaderProps> = ({isGridView, switchView, title}) 
                     </ul>
                 </div>
                 <div>
-                    {title === 'People' && (<ContainerModal isShowButton={true} triggerText="Add people" />)}
+                    {title === 'People' && (<ContainerModal isShowButton={true} triggerText="Add people" item={defaultContact} />)}
                 </div>
                 <div>
                     <img alt={locationFilter} src={locationFilter} />
